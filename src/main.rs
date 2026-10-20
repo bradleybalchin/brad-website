@@ -10,6 +10,7 @@ async fn main() {
     
     let app = Router::new()
                 .merge(features::home::router())
+                .nest_service("/public", ServeDir::new("public"))
                 .fallback_service(ServeDir::new("public"));
 
 
