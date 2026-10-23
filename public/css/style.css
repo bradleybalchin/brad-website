@@ -69,7 +69,7 @@ main {
 
 .card {
     border-style: none;
-    border-radius: 0.8rem;
+    border-radius: 0.3rem;
 
     background-color: var(--navy);
     color: var(--sunlit);
@@ -84,6 +84,18 @@ main {
 
 .card h2 {
     margin: 0.1rem;
+    text-shadow: 1.5px 0.3px 0px var(--brandy);
+}
+
+.card p {
+
+}
+
+.card a {
+    color: var(--tangerine);
+    font-weight: bold;
+    text-decoration: none;
+    
 }
 
 footer {
