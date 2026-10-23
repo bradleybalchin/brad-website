@@ -37,6 +37,11 @@ header {
 
 header h1 {
     margin: 0;
+    font-size: 50px;
+    background: -webkit-linear-gradient(300deg, var(--tangerine) 0%, var(--tangerine) 50%, var(--sunlit) 70%, var(--sunlit) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 header p {
