@@ -1,4 +1,5 @@
 :root{
+    /* Color Pallete */
     --sunlit :  #F4AA51;
     --tangerine:#F27B39;
     --clay :    #734434;
@@ -72,6 +73,7 @@ main {
     gap: 0.7rem;
 }
 
+/* Cards - Containers for information / content */
 .card {
     border-style: none;
     border-radius: 0.3rem;
@@ -102,6 +104,67 @@ main {
     text-decoration: none;
     
 }
+
+/*  profile (image, status, etc) */
+
+#profile img{
+    width: 100%;
+    box-sizing: border-box;
+
+    border-radius:  100%;
+
+    padding: 0.25rem;
+    background: 
+    conic-gradient(from var(--angle), 
+        var(--clay), 
+        var(--brandy), 
+        var(--tangerine), 
+        var(--sunlit),
+        var(--tangerine),
+        var(--brandy));
+    animation: spin 5s linear infinite;
+    background-size: 300% 300%;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    to { --angle: 360deg; }
+}
+
+/* Status Notics (inside profile card) */
+.status {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+    text-shadow: 1.5px 0.3px 0px var(--brandy);
+    font-weight: bolder;
+    font-size: larger;
+
+    letter-spacing: 0.05rem;
+}
+
+.status::before {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.status[data-status="online"]::before {
+    background-image: url("/public/images/online_icon.png");
+}
+
+
+
+/* Footer */
 
 footer {
     flex-shrink: 0;
