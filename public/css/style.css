@@ -23,6 +23,7 @@ body {
     gap: 1rem;
 
     background-color: var(--indigo);
+
 }
 
 header {
@@ -55,10 +56,12 @@ main {
     grid-template-columns: 3fr 1fr;
     gap: 2rem;
     
-   flex: 1 0 auto;
-   width: 100%;
-   box-sizing: border-box;
-   padding: 0rem 10rem;
+    flex: 1 0 auto;
+    width: 1400px;
+    max-width: 100%;
+
+    box-sizing: border-box;
+    padding: 0rem 1rem;
 }
 
 .main-menu {
@@ -105,10 +108,15 @@ main {
     
 }
 
+.card a:hover {
+    color: var(--sunlit);
+}
+
 /*  profile (image, status, etc) */
 
 #profile img {
     width: 100%;
+    max-width: 400px;
     aspect-ratio: 1;
     object-fit: cover;
     box-sizing: border-box;
@@ -116,7 +124,7 @@ main {
 
     /* ring = border, gap = padding */
     border: 3px solid transparent;
-    padding: 1.5px;
+    padding: 1%;
     background:
         conic-gradient(from var(--angle),
             var(--clay) 0deg,
