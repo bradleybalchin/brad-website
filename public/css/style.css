@@ -107,23 +107,35 @@ main {
 
 /*  profile (image, status, etc) */
 
-#profile img{
+#profile img {
     width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
     box-sizing: border-box;
+    border-radius: 50%;
 
-    border-radius:  100%;
+    /* ring = border, gap = padding */
+    border: 3px solid transparent;
+    padding: 1.5px;
+    background:
+        conic-gradient(from var(--angle),
+            var(--clay) 0deg,
+            var(--brandy) 140deg,
+            var(--tangerine) 250deg,
+            var(--sunlit) 310deg,
+            var(--clay) 360deg) border-box;
 
-    padding: 0.25rem;
-    background: 
-    conic-gradient(from var(--angle), 
-        var(--clay), 
-        var(--brandy), 
-        var(--tangerine), 
-        var(--sunlit),
-        var(--tangerine),
-        var(--brandy));
-    animation: spin 5s linear infinite;
-    background-size: 300% 300%;
+    animation: spin 10s linear infinite;
+    filter: drop-shadow(0 0 8px rgb(242 123 57 / 0.1));
+    transition: filter 0.3s ease;
+}
+
+#profile img:hover {
+    filter: drop-shadow(0 0 14px rgb(244 170 81 / 0.5));
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #profile img { animation: none; }
 }
 
 @property --angle {
